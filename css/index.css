@@ -1,0 +1,363 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #666;
+}
+
+a {
+  /* 继承父元素的字体颜色  */
+  color: inherit;
+  /* 去除下划线 */
+  text-decoration: none;
+}
+
+.main {
+  max-width: 540px;
+  min-width: 300px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.main > section {
+  margin: 5px 0;
+}
+
+/* 分类 */
+.cate {
+  color: #fff;
+}
+
+.cate > div {
+  margin: 5px 0;
+  height: 90px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.cate > div > .main_menu {
+  flex: 1;
+  /* 把盒子变成伸缩盒子 */
+  display: flex;
+  /* 设置主轴的方向 */
+  flex-direction: column;
+  /* 设置侧轴子项的排列方式 */
+  align-items: center;
+  /* 设置主轴子项的排列方式 */
+  justify-content: space-around;
+  border-right: 1px solid #fff;
+}
+
+.cate > div .sub_menu {
+  flex: 2;
+  display: flex;
+  /* 设置换行 */
+  flex-wrap: wrap;
+  /* 前两个a标签 */
+  /* 奇数 */
+}
+
+.cate > div .sub_menu > a {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cate > div .sub_menu > a:nth-child(-n+2) {
+  border-bottom: 1px solid #fff;
+}
+
+.cate > div .sub_menu > a:nth-child(odd) {
+  border-right: 1px solid #fff;
+}
+
+.cate > .hotel {
+  background-color: #ff697a;
+}
+
+.cate > .hotel .main_menu > span:nth-child(2) {
+  width: 43px;
+  height: 43px;
+  background-image: url("../images/un_ico_home_v620.png");
+  background-size: 104px 327px;
+  background-position: 0 -130px;
+}
+
+.cate > .tircket {
+  background-color: #3d98ff;
+}
+
+.cate > .travel {
+  background-color: #44c522;
+}
+
+.cate > .others {
+  background-color: #fc9720;
+  display: flex;
+  flex-wrap: wrap;
+  /* 2 5 8  */
+}
+
+.cate > .others > a {
+  width: 33.33%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cate > .others > a:nth-child(-n+3) {
+  border-bottom: 1px solid #fff;
+}
+
+.cate > .others > a:nth-child(3n-1) {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+/* 导航 */
+.xc_nav {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.xc_nav > a {
+  width: 25%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.xc_nav > a > span {
+  background-image: url("../images/icon_sprites.png");
+  background-size: 20px 315px;
+  background-position: 0 -80px;
+  width: 20px;
+  height: 20px;
+}
+
+/* 特卖汇 */
+.hot_sell {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.hot_sell .hs_title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hot_sell .hs_title > span {
+  font-style: italic;
+  font-weight: 600;
+  color: #fd3c52;
+  font-size: 16px;
+}
+
+.hot_sell .hs_title > a {
+  background-image: linear-gradient(to right, #ff6b7d, #ff84d2);
+  color: #fff;
+  font-size: 12px;
+  border-radius: 17px;
+  padding: 2px 8px;
+}
+
+.hot_sell .hs_content {
+  display: flex;
+}
+
+.hot_sell .hs_content .main_sell {
+  flex: 1;
+  position: relative;
+}
+
+.hot_sell .hs_content .main_sell > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.hot_sell .hs_content .main_sell > span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 26px 20px 0px 0px;
+  border-style: solid;
+  border-color: red transparent transparent red;
+}
+
+.hot_sell .hs_content .main_sell > img {
+  width: 100%;
+  height: 143px;
+}
+
+.hot_sell .hs_content .main_sell > .sell_info {
+  overflow: hidden;
+  height: 42px;
+  font-size: 14px;
+  /* 
+        有兼容问题,暂时不建议使用
+         */
+}
+
+.hot_sell .hs_content .main_sell > .price .price_start {
+  color: #fe4f5e;
+}
+
+.hot_sell .hs_content .main_sell > .price .price_cheaper {
+  background-color: #fd3a51;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 8px;
+}
+
+.hot_sell .hs_content .sub_sell {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hot_sell .hs_content .sub_sell > a {
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+}
+
+.hot_sell .hs_content .sub_sell > a dl dt {
+  font-size: 14px;
+}
+
+.hot_sell .hs_content .sub_sell > a dl dd {
+  font-size: 12px;
+}
+
+.hot_sell .hs_content .sub_sell > a > img {
+  width: 54px;
+  height: 71px;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(1) {
+  width: 100%;
+  position: relative;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(1) dl dt {
+  color: #fd3a51;
+  font-weight: 600;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(1) > img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(2) > dl dt {
+  color: #6aabff;
+  font-weight: 600;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(2) > dl dd > span {
+  color: #6aabff;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(2) > img {
+  width: 50px;
+  height: 35px;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(3) > dl dt {
+  color: #68d2bc;
+  font-weight: 600;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(3) > dl dd > span {
+  color: #68d2bc;
+}
+
+.hot_sell .hs_content .sub_sell > a:nth-child(3) > img {
+  width: 50px;
+  height: 35px;
+}
+
+/* 活动 */
+.activity {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.activity .activity_title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity .activity_title > span {
+  font-style: italic;
+  font-weight: 600;
+  color: orange;
+  font-size: 16px;
+}
+
+.activity .activity_title > a {
+  background-image: linear-gradient(to right, #ff6b7d, #ff84d2);
+  color: #fff;
+  font-size: 12px;
+  border-radius: 17px;
+  padding: 2px 8px;
+}
+
+.activity .activity_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.activity .activity_content > a {
+  width: 50%;
+}
+
+.activity .activity_content > a img {
+  width: 100%;
+}
+
+/* 尾部 */
+.xc_footer .download {
+  background-color: #fff;
+  display: flex;
+}
+
+.xc_footer .download > a {
+  flex: 1;
+  text-align: center;
+}
+
+.xc_footer .copyright {
+  text-align: center;
+}
